@@ -6,10 +6,24 @@
   "scripts": {
     "start": "node server.js"
   },
-  "keywords": ["mesalab", "soporte", "solicitudes", "nodejs", "mysql"],
+  "keywords": [
+    "mesalab",
+    "soporte",
+    "solicitudes",
+    "nodejs",
+    "mysql"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mysql2": "^3.6.0"
-  }
+    "mysql2": "^3.22.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigonunezJR10/mesalab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigonunezJR10/mesalab/issues"
+  },
+  "homepage": "https://github.com/rodrigonunezJR10/mesalab#readme"
 }
