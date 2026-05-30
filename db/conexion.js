@@ -3,9 +3,9 @@ const mysql = require('mysql2');
 
 const conexion = mysql.createConnection({
   host: 'localhost',
-  user: 'estudiante',        
-  password: 'Informatica-165',
-  database: 'mesalab_dbRNunez'
+  user: 'root',        
+  password: '',
+  database: './db/conexion'
 });
 
 conexion.connect((err) => {
