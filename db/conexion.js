@@ -1,11 +1,11 @@
-// db/conexion.js
+//conexion DB mysql
 const mysql = require('mysql2');
 
 const conexion = mysql.createConnection({
   host: 'localhost',
-  user: 'root',        // Cambia según tu configuración
-  password: '',        // Cambia según tu configuración
-  database: 'mesalab_db'
+  user: 'estudiante',        
+  password: 'Informatica-165',
+  database: 'mesalab_dbRNunez'
 });
 
 conexion.connect((err) => {
