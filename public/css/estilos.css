@@ -1,0 +1,476 @@
+/* public/css/estilos.css */
+
+/* ===== VARIABLES ===== */
+:root {
+  --azul-oscuro: #0f172a;
+  --azul-medio: #1e3a5f;
+  --azul-acento: #2563eb;
+  --azul-claro: #3b82f6;
+  --cielo: #e0f2fe;
+  --blanco: #ffffff;
+  --gris-fondo: #f1f5f9;
+  --gris-borde: #cbd5e1;
+  --gris-texto: #475569;
+  --texto-oscuro: #0f172a;
+
+  --pendiente-bg: #fef9c3;
+  --pendiente-txt: #854d0e;
+  --proceso-bg: #dbeafe;
+  --proceso-txt: #1d4ed8;
+  --resuelta-bg: #dcfce7;
+  --resuelta-txt: #166534;
+
+  --alta-bg: #fee2e2;
+  --alta-txt: #991b1b;
+  --media-bg: #fef3c7;
+  --media-txt: #92400e;
+  --baja-bg: #d1fae5;
+  --baja-txt: #065f46;
+
+  --font-titulo: 'Playfair Display', serif;
+  --font-cuerpo: 'DM Sans', sans-serif;
+  --sombra: 0 4px 24px rgba(15,23,42,0.10);
+  --radio: 12px;
+
+  /* Colores empresariales (paleta) */
+  --corp-primary: #0b3d91;   /* azul corporativo profundo */
+  --corp-primary-600: #0a58ca;
+  --corp-secondary: #6b7280; /* gris acero */
+  --corp-accent: #0ea5a4;    /* verde azulado */
+  --corp-warm: #f59e0b;      /* dorado/amarillo */
+  --corp-bg-light: #b8c0c7;  /* fondo claro neutro */
+  --corp-text-dark: #0b1230; /* texto principal */
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-cuerpo);
+  background: var(--corp-bg-light);
+  color: var(--texto-oscuro);
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: var(--azul-acento); }
+a:hover { text-decoration: underline; }
+
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, var(--corp-primary) 0%, var(--corp-primary-600) 100%);
+  color: var(--blanco);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  box-shadow: 0 2px 12px rgba(11,61,145,0.18);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-family: var(--font-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--blanco);
+}
+
+header .logo span {
+  color: #60a5fa;
+}
+
+header nav a {
+  color: rgba(255,255,255,0.9);
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+header nav a:hover { color: #fff; text-decoration: none; }
+
+/* ===== MAIN / HERO INDEX ===== */
+.hero {
+  max-width: 760px;
+  margin: 80px auto 0;
+  text-align: center;
+  padding: 0 1.5rem;
+  animation: fadeUp 0.7s ease both;
+}
+
+.hero h1 {
+  font-family: var(--font-titulo);
+  font-size: 2.8rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: var(--gris-texto);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radio);
+  font-family: var(--font-cuerpo);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+}
+
+.btn-primary {
+  background: var(--corp-primary);
+  color: var(--blanco);
+  box-shadow: 0 4px 16px rgba(11,61,145,0.18);
+}
+.btn-primary:hover {
+  background: var(--corp-primary-600);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(11,61,145,0.22);
+  text-decoration: none;
+  color: var(--blanco);
+}
+
+.btn-secondary {
+  background: var(--blanco);
+  color: var(--corp-primary);
+  border: 2px solid var(--corp-primary);
+}
+.btn-secondary:hover {
+  background: rgba(11,61,145,0.04);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-sm {
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+.btn-success { background: #16a34a; color: #fff; }
+.btn-warning { background: #d97706; color: #fff; }
+.btn-danger  { background: #dc2626; color: #fff; }
+
+/* ===== TARJETA / CARD ===== */
+.card {
+  background: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 2rem;
+}
+
+/* ===== LOGIN ===== */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #2563eb 100%);
+  padding: 2rem;
+}
+
+.login-card {
+  background: var(--blanco);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(15,23,42,0.35);
+  padding: 2.5rem 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.login-card .brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.login-card .brand h2 {
+  font-family: var(--font-titulo);
+  font-size: 2rem;
+  color: var(--azul-oscuro);
+}
+.login-card .brand p {
+  color: var(--gris-texto);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* ===== FORMULARIOS ===== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--azul-medio);
+  margin-bottom: 0.4rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gris-borde);
+  border-radius: 10px;
+  font-family: var(--font-cuerpo);
+  font-size: 0.95rem;
+  color: var(--texto-oscuro);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: var(--blanco);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--azul-acento);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
+}
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.btn-block { width: 100%; }
+
+/* ===== MENSAJE FEEDBACK ===== */
+.mensaje {
+  display: none;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+.mensaje.exito  { background: #dcfce7; color: #166534; border: 1px solid #86efac; display: block; }
+.mensaje.error  { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; display: block; }
+
+/* ===== PANEL ===== */
+.panel-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 2rem;
+}
+
+@media (max-width: 900px) {
+  .panel-layout { grid-template-columns: 1fr; }
+}
+
+.panel-title {
+  font-family: var(--font-titulo);
+  font-size: 1.4rem;
+  color: var(--azul-oscuro);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--cielo);
+}
+
+/* ===== TABLA ===== */
+.tabla-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--blanco);
+  font-size: 0.9rem;
+}
+
+thead {
+  background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio));
+  color: var(--blanco);
+}
+thead th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+tbody tr:hover { background: #f8faff; }
+
+tbody td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  color: var(--gris-texto);
+}
+
+/* ===== BADGES ESTADO ===== */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.badge-pendiente { background: var(--pendiente-bg); color: var(--pendiente-txt); }
+.badge-proceso   { background: var(--proceso-bg);   color: var(--proceso-txt); }
+.badge-resuelta  { background: var(--resuelta-bg);  color: var(--resuelta-txt); }
+.badge-alta      { background: var(--alta-bg);      color: var(--alta-txt); }
+.badge-media     { background: var(--media-bg);     color: var(--media-txt); }
+.badge-baja      { background: var(--baja-bg);      color: var(--baja-txt); }
+
+/* ===== SELECT ESTADO EN TABLA ===== */
+.select-estado {
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--gris-borde);
+  font-family: var(--font-cuerpo);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+/* ===== USUARIO PANEL ===== */
+.user-info {
+  background: linear-gradient(135deg, var(--azul-medio), var(--azul-acento));
+  color: var(--blanco);
+  border-radius: var(--radio);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+.user-info strong { display: block; font-size: 1.05rem; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--corp-primary);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  margin-top: 3rem;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .login-card { padding: 2rem 1.5rem; }
+  header .logo { font-size: 1.2rem; }
+  table { font-size: 0.8rem; }
+}
+
+/* ===== THEMES & ALTERNATIVE BACKGROUNDS ===== */
+/* Añade estas clases al <body> para cambiar fondo y paleta rápidamente */
+
+/* Paletas temáticas: aplicar como <body class="theme-midnight"> */
+.theme-sunset {
+  --bg: linear-gradient(120deg,#ffecd2 0%,#fcb69f 100%);
+  --surface: #fffaf0;
+  --text: #3b2f2f;
+  --accent: #ea580c;
+}
+
+.theme-midnight {
+  --bg: radial-gradient(circle at 10% 20%, #0b1220 0%, #0f172a 30%, #071023 100%);
+  --surface: rgba(255,255,255,0.03);
+  --text: #e6eef8;
+  --accent: #60a5fa;
+}
+
+.theme-forest {
+  --bg: linear-gradient(135deg,#d1fae5 0%,#60a5fa 100%);
+  --surface: #ffffff;
+  --text: #064e3b;
+  --accent: #16a34a;
+}
+
+/* Aplicar variables de fondo a body cuando se use la clase */
+body.theme-sunset { background: var(--bg); color: var(--text); }
+body.theme-midnight { background: var(--bg); color: var(--text); }
+body.theme-forest  { background: var(--bg); color: var(--text); }
+
+/* Variantes de fondo utilitarias */
+.alt-bg-1 {
+  background: linear-gradient(135deg,#1e3a8a 0%,#7c3aed 50%,#06b6d4 100%);
+  color: #ffffff;
+  background-attachment: fixed;
+}
+
+.alt-bg-2 {
+  background: repeating-linear-gradient(45deg,#f8fafc 0 10px,#eef2ff 10px 20px),
+              linear-gradient(180deg,#ffffff 0%,#f1f5f9 100%);
+  color: var(--texto-oscuro);
+}
+
+/* Ajustes de superficie para temas oscuros */
+body.theme-midnight header { background: transparent; box-shadow: none; }
+body.theme-midnight .card,
+body.theme-midnight .login-card,
+body.theme-midnight table,
+body.theme-midnight .panel-layout { background: var(--surface); color: var(--text); border-color: rgba(255,255,255,0.06); }
+
+/* Botones y acentos por tema */
+body.theme-sunset .btn-primary { background: var(--accent); box-shadow: 0 6px 20px rgba(234,88,12,0.18); color: #fff; }
+body.theme-forest  .btn-primary { background: var(--accent); box-shadow: 0 6px 20px rgba(22,163,74,0.12); color: #fff; }
+body.theme-midnight .btn-primary { background: var(--accent); box-shadow: 0 6px 24px rgba(96,165,250,0.06); color: var(--text); }
+
+/* Pequeñas utilidades para texto y enlaces en temas */
+body.theme-midnight a { color: var(--accent); }
+body.theme-sunset a { color: #7c2d12; }
+body.theme-forest a { color: #065f46; }
+
+/* Ejemplos de uso (HTML):
+   <body class="theme-midnight"> ... </body>
+   o: <body class="alt-bg-1"> ... </body>
+*/
+
+/* ===== COLORES EMPRESARIALES / UTILIDADES ===== */
+/* Uso: aplicar clases en <body> o elementos puntuales */
+.brand-bg { background: var(--corp-primary); color: #ffffff; }
+.brand-bg-600 { background: var(--corp-primary-600); color: #ffffff; }
+.brand-gradient { background: linear-gradient(90deg,var(--corp-primary),var(--corp-accent)); color: #fff; }
+.brand-surface { background: var(--corp-bg-light); color: var(--corp-text-dark); }
+.brand-accent { color: var(--corp-accent); }
+.brand-warm  { color: var(--corp-warm); }
+.text-corp   { color: var(--corp-text-dark); }
+.border-corp { border: 1px solid rgba(11,61,145,0.12); }
+
+/* Botón de marca */
+.btn-corp {
+  background: var(--corp-primary);
+  color: #fff;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px rgba(11,61,145,0.12);
+}
+.btn-corp:hover { background: var(--corp-primary-600); transform: translateY(-2px); }
+
+/* Enlaces de marca */
+a.brand-link { color: var(--corp-primary-600); font-weight: 600; }
+
+/* Ejemplos:
+  <body class="brand-surface"> ... </body>
+  <header class="brand-bg"> ... </header>
+  <a class="brand-link" href="#">Contacto</a>
+*/
